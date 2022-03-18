@@ -1,4 +1,4 @@
-<?php
+[09:57, 18/3/2022] Sara Barbi: <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,10 +14,21 @@ class AddCategoryToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->foreignId('category_id')    //foreign key, che sta nel one
-            ->constrained()
+            $table->foreignId('category_id')
             ->nullable()
-            ->nullOnDelete();  //se si cancella la categoria, il post sarà null
+            ->constrained()
+            ->OnDelete('set null'); 
+            //se si cancella la categoria, il post sarà null
+            
+            /*
+            $table->usignedBigInteger('category_id');    //foreign key, che sta nel one
+            
+            $table->foreign('category_id')    //foreign key
+            ->references('id')
+            ->on('categories')
+            ->nullable()
+            ->nullOnDelete(); 
+            */
         });
     }
 
@@ -32,5 +43,6 @@ class AddCategoryToPostsTable extends Migration
             $table->dropForeign(['category_id']);  //prima prendo la mia foreign key
             $table->dropColumn('category_id');   //poi creo la colonna
         });
+    
     }
 }
