@@ -1,6 +1,14 @@
 // Body
 $body-bg: #f8fafc;
-$info-light:#9d9d9c;
+$info-light:#a29f9f;
+$client-custom:20px; //font-size
+$client-img: 5px ; //border-radious
+$container-p:relative; //container position for category pos.
+$category:absolute;  //position
+$category-position-top:0px;
+$category-position-right:0px;
+
+
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
