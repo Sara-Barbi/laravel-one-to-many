@@ -9,14 +9,14 @@
 @foreach($posts as $post)
 <div class="container d-flex flex-column align-items-center">
     <h1>{{$post->title}}</h1>
-    <div>Category: {{$post->category?$post->category->name:'-'}}</div>
-    <p><strong>Time Cooking:</strong> {{$post->time_cooking}}</p>
+    <div>{{$post->category?$post->category->name:'-'}}</div>
+    <p><strong class="info_smart">Time Cooking:</strong> {{$post->time_cooking}}</p>
     <div class="col-5">
         <img class="w-100" src="{{$post->img}}" alt="">
     </div>
-    <p><strong>ingredients:</strong> {{$post->ingredients}}</p>
+    <p><strong class="info_smart">ingredients:</strong> {{$post->ingredients}}</p>
     <ul class="p-0">
-        <strong>Description:</strong> 
+        <strong class="info_smart">Description:</strong> 
         <li>
             {{$post->content}}
         </li>
