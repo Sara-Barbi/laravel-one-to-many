@@ -5,6 +5,7 @@
 @section('content')
 <div class="container text-center d-flex flex-column align-items-center">
     <h1>{{$post->title}}</h1>
+    <div>Category: {{$post->category?$post->category->name:'-'}}</div>
     <div class="col-5">
         <img src="{{$post->img}}" alt="" class="w-100">
     </div>

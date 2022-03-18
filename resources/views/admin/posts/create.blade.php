@@ -12,6 +12,19 @@
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
+    <div class="form-group">
+        <label for="">Category</label>
+        <select name="category_id" id="category_id" class="form-control">
+            <option value="">--seleziona categoria--</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">
+                      {{ $category->name }}
+                    </option>
+                  @endforeach
+        </select>
+       
+    </div>
+
     <label for="content" class="form-label m-3">content</label>
     <input type="text" name="content" id="content" class="form-control col-6 text-center " placeholder="Insert content" value="{{old("content")}}"> <!--E' MOLTO IMPORTANTE CHE NAME E ID SIANO GUALI A CIO' CHE ABBIAMO NEL SERVER-->
     @error('content')

@@ -9,6 +9,7 @@
 @foreach($posts as $post)
 <div class="container d-flex flex-column align-items-center">
     <h1>{{$post->title}}</h1>
+    <div>Category: {{$post->category?$post->category->name:'-'}}</div>
     <p><strong>Time Cooking:</strong> {{$post->time_cooking}}</p>
     <div class="col-5">
         <img class="w-100" src="{{$post->img}}" alt="">
