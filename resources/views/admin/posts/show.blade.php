@@ -3,31 +3,37 @@
 @section('title','product list')
 
 @section('content')
-<div class="container text-center d-flex flex-column align-items-center">
-    <h1>{{$post->title}}</h1>
-    <div>Category: {{$post->category?$post->category->name:'-'}}</div>
-    <div class="col-5">
-        <img src="{{$post->img}}" alt="" class="w-100">
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-10 back_show">
+            <h1 class="mt-5 mb-3">{{$post->title}}</h1>
+
+            <div><strong class="info_smart mb-5">Category:</strong> {{$post->category?$post->category->name:'-'}}</div>
+            
+            <img src="{{$post->img}}" alt="" class="col-8 w-100 mt-5 mb-5">
+            
+            <p><strong class="info_smart">Ingredients:</strong> {{$post->ingredients}}</p>
+            
+            <ul class='p-0'>
+                <strong class="info_smart mt-3">Description:</strong> 
+                <li>
+                    {{$post->content}}
+                </li>
+            </ul>
+            <ul class='p-0'>
+                <strong class="info_smart">Price:</strong> 
+                <li>
+                    {{$post->price}}
+                </li>
+            </ul>
+            <ul class='p-0'>
+                <strong class="info_smart">Time for Cook:</strong> 
+                <li>
+                    {{$post->time_cooking}}
+                </li>
+            </ul> 
+            <a href="{{route("admin.posts.index")}}"><button type="button" class="btn btn-primary m-3">Back</button></a>
+        </div>
     </div>
-    <p><strong>Ingredients:</strong> {{$post->ingredients}}</p>
-    <ul class='p-0'>
-        <strong>Description:</strong> 
-        <li>
-            {{$post->content}}
-        </li>
-    </ul>
-    <ul class='p-0'>
-        <strong>Price:</strong> 
-        <li>
-            {{$post->price}}
-        </li>
-    </ul>
-    <ul class='p-0'>
-        <strong>Time for Cook:</strong> 
-        <li>
-            {{$post->time_cooking}}
-        </li>
-    </ul> 
-    <a href="{{route("admin.posts.index")}}"><button type="button" class="btn btn-primary">Back</button></a>
 </div>
 @endsection
